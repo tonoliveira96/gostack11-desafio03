@@ -6,16 +6,24 @@
 
 body {
   font-size: 14px;
+  background: #7129c1;
+  
 }
 
 div {
-  width: 100%;
+  max-width: 400px;
   margin: 20px;
+  padding: 5px;
+  background: #fff;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div li {
   display: flex;
   align-items: center;
+  
 }
 
 div li + li {
@@ -23,7 +31,7 @@ div li + li {
 }
 
 button {
-  background: #7159c1;
+  background: #7129c1;
   color: #fff;
   border: 0;
   padding: 10px 15px;
@@ -31,6 +39,11 @@ button {
   margin-top: 15px;
   font-weight: bold;
   font-size: 14px;
+  border-radius: 4px;
+}
+
+button:hover{
+  opacity: 0.4;
 }
 
 div li button {
