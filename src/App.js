@@ -15,13 +15,27 @@ function App() {
   async function handleAddRepository() {
     // TODO
     //setRepositories([...repositories, 'Teste'])
-    api.post('/repositories',{
-      
+    const response = await api.post('/repositories',{
+      title: Date.now(),
+      url : "https://github.com/tonoliveira96/gostack11-desafio02",
+      techs : "NodeJS",
+      likes:0
     })
+
+    const repository = response.data
+
+    setRepositories([...repositories, repository])
   }
 
   async function handleRemoveRepository(id) {
-    // TODO
+     await api.delete(`/repositories/${id}`)
+
+    const index = repositories.findIndex(repo=> repo.id === id);
+
+    repositories.splice(index, 1)
+
+    console.log(repositories)
+    setRepositories([...repositories])
   }
 
   return (
@@ -32,14 +46,13 @@ function App() {
           <li key={repo.id}> 
           {repo.title}
 
-          <button onClick={() => handleRemoveRepository(1)}>
+          <button onClick={() => handleRemoveRepository(repo.id)}>
             Remover
           </button>
         </li>
         )
        }                
       </ul>
-
       <button onClick={handleAddRepository}>Adicionar</button>
     </div>
   );
