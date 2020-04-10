@@ -23,11 +23,11 @@ div {
 div li {
   display: flex;
   align-items: center;
-  
 }
 
 div li + li {
   margin-top: 15px;
+  border-top: 1px solid #666;
 }
 
 button {
@@ -47,6 +47,7 @@ button:hover{
 }
 
 div li button {
-  margin: 0 15px;
+  margin: 5px;
   background: #ca4949;
+  margin-left: auto;
 }
